@@ -1,0 +1,30 @@
+{
+  "name": "url_shortener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "config": {
+    "database": {
+      "postgres": {
+        "database_uri": "postgres://localhost:5432/url_shortener",
+        "host": "127.0.0.1",
+        "port": 5432,
+        "dbName": "url_shortener"
+      }
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/menghaohsu/Url_Shortener.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/menghaohsu/Url_Shortener/issues"
+  },
+  "homepage": "https://github.com/menghaohsu/Url_Shortener#readme"
+}
