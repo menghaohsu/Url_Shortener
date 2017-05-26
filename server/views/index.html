@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
   <title> Wizeline Url Shortener </title>
-  <head>
+  <head> 
   </head>
 
   <body>
-  
-  <form action="/" method="POST">
-    <h3> Please enter the url: <input type="url" name="url" cols="40" required pattern="https?://.+"></h3>
-    <input type="submit">
-  </form>
-  <div><textarea rows="4" cols="50"></textarea></div>
+    <h3> Please enter the url: <input type="url" name="url" id="url" cols="40" required pattern="https?://.+"></h3>
+    <button type="button" id="submit"></button>
+    <div><textarea readonly id="shortenUrl" rows="4" cols="50"></textarea></div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script type="text/javascript">   
+      $(document).on('ready', () => {    
+        $('#submit').on('click', (event) => {
+          var url = $('#url').val();
+          $.ajax({
+            method: 'POST',
+            url: '/',
+            data: { url: url },
+            success: (data) => {
+              $('#shortenUrl').text(data.shortenUrl);
+            },
+            error: (err) => {
+              console.log(err);
+            }
+          })
+        })
+      });
+    </script>
 
   </body>
 </html>
