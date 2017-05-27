@@ -2,17 +2,23 @@
 <html lang="en">
   <title> Wizeline Url Shortener </title>
   <head> 
+    <link rel="stylesheet" type="text/css" src="../../public/stylesheets/styles.css"/>
   </head>
 
   <body>
     <h3> Please enter the url: <input type="url" name="url" id="url" cols="40" required pattern="https?://.+"></h3>
-    <input type="submit" id="submit">
-    <div><textarea readonly id="shortenUrl" rows="4" cols="50"></textarea></div>
+    <button id="submit">Transfer</button>
+    <div>
+      <textarea readonly id="shortenUrl" rows="4" cols="50"></textarea>
+      <button id="copy" data-clipboard-target="#shortenUrl">Copy</button> 
+    </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-    <script type="text/javascript">   
+    <script type="text/javascript">
+
       $(document).on('ready', () => {    
+
         $('#submit').on('click', (event) => {
           var url = $('#url').val();
           $.ajax({
@@ -25,9 +31,25 @@
             error: (err) => {
               console.log(err);
             }
-          })
-        })
+          });
+        });
+
       });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
+
+    <script>
+      var clipboard = new Clipboard('#copy');
+
+      clipboard.on('success', (e) => {
+        console.log('copy successfully');
+      });
+
+      clipboard.on('error', (e) => {
+        console.log(e)
+      });
+
     </script>
 
   </body>
