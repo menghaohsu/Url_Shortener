@@ -6,7 +6,7 @@
 
   <body>
     <h3> Please enter the url: <input type="url" name="url" id="url" cols="40" required pattern="https?://.+"></h3>
-    <button type="button" id="submit"></button>
+    <input type="submit" id="submit">
     <div><textarea readonly id="shortenUrl" rows="4" cols="50"></textarea></div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -20,7 +20,7 @@
             url: '/',
             data: { url: url },
             success: (data) => {
-              $('#shortenUrl').text(data.shortenUrl);
+              $('#shortenUrl').text(`http://localhost:3000/${data.shortenUrl}`);
             },
             error: (err) => {
               console.log(err);
