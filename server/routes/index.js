@@ -6,7 +6,7 @@ const router = express.Router();
 
 module.exports = () => {
 
-	router.get('/', (req, res, next) => {
+  router.get('/', (req, res, next) => {
     return res.sendFile(path.join(__dirname, '../views/index.html'), (err)=>{
     	if(err) next(err);
     })
