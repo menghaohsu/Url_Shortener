@@ -1,5 +1,5 @@
 # Url_Shortener
-An useful Url_Shortener to let you easily shorten and url that starts with "http://" or "https://" 
+An useful Url_Shortener to let you easily shorten url that starts with "http://" or "https://".
 
 ## Prerequisite
 - Node.js
