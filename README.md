@@ -4,7 +4,7 @@ An useful Url_Shortener to let you easily shorten and url that starts with "http
 ## Prerequisite
 - Node.js
 - npm
-- Postgres (First run createdb url_shortener in terminal)
+- Postgres (First run "createdb url_shortener" in terminal)
 
 ## Technology
 
