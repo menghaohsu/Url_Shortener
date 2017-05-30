@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/menghaohsu/Url_Shortener#readme",
   "dependencies": {
-    "clipboard": "^1.6.1"
+    "clipboard": "^1.6.1",
+    "swig": "^1.4.2"
   }
 }

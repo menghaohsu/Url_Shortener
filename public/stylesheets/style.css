@@ -1,0 +1,30 @@
+table, th, td {
+  border: 1px solid black;
+}
+
+h1, h3 {
+  font-weight: bold;
+}
+
+h3 {
+  display:inline-block;
+}
+
+button {
+  display:inline-block;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#submit {
+  background-color: #008CBA;
+}
+
+#copy {
+  background-color: #4CAF50;
+}

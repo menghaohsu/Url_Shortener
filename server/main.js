@@ -1,11 +1,13 @@
 const express = require('express');
 const routes = require('./routes');
+const swig = require('swig');
 const bodyParser = require('body-parser');
 const db = require('./db');
 
 const app = express();
 console.log("server listening")
 
+app.engine('html', swig.renderFile);
 app.set('view engine','html')
 app.set('views', __dirname+'/views/');
 
@@ -13,6 +15,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use('/', routes());
+
+app.use(express.static('public'));
 
 // failed to catch req above means 404, forward to error handler
 app.use((req, res, next) =>{

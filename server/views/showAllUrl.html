@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title> Wizeline Url Shortener </title>
+  <head>
+    <link href="/stylesheets/style.css" rel="stylesheet">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <h1 id='showUrlTitle'>All Shorten Url</h1>
+  </head>
+
+  <body>
+    <table id='allUrl'>
+      <tr>
+        <th>Url</th>
+        <th>Shorten Url</th>
+      </tr>
+      {% for url in allUrls %}
+        <tr>
+          <th>{{url.url}}</th>
+          <th>http://localhost:3000/{{url.shortenUrl}}</th>
+        </tr>
+      {% endfor %}
+  </body>
+</html>
