@@ -20,9 +20,9 @@ module.exports = () => {
   });
 
   // when user enter shorten url in browser
-  router.get('/:id', (req, res, next) => {
+  router.get('/:sUrl', (req, res, next) => {
     return Url.findOne({
-      where: { shortenUrl: req.params.id }
+      where: { shortenUrl: req.params.sUrl }
     })
     .then((url) => {
       res.redirect(url.url);

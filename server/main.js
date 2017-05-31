@@ -40,7 +40,7 @@ app.use((err, req, res, next) => {
 const port = 3000;
 app.listen(port, () => {
   console.log('The server is listening closely on port', port);
-  db.sync()
+  db.sync({ force:true })
   .then(() => {
     console.log('Sync the database');
   })

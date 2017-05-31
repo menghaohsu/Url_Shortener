@@ -1,9 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('../_db');
 
-const char = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_';
-const length = char.length;
-
 module.exports = db.define('url',{
   url: {
     type: Sequelize.STRING
@@ -14,11 +11,13 @@ module.exports = db.define('url',{
 },{
   // hashing with id
   classMethods: {
-    encode: (num) => {
+    encode: (id) => {
+      const char = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_';
+      const length = char.length;
       let shortenUrl = '';
-      while(num>0){
-        shortenUrl = char.charAt(num%length) + shortenUrl;
-        num = Math.floor(num/length);
+      while(id>0){
+        shortenUrl = char.charAt(id%length) + shortenUrl;
+        id = Math.floor(id/length);
       }
       return shortenUrl;
     }
