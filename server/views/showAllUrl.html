@@ -12,11 +12,13 @@
       <tr>
         <th>Url</th>
         <th>Shorten Url</th>
+        <th>Click Count</th>
       </tr>
       {% for url in allUrls %}
         <tr>
           <th>{{url.url}}</th>
           <th>http://localhost:3000/{{url.shortenUrl}}</th>
+          <th>{{url.clickCount}}</th>
         </tr>
       {% endfor %}
   </body>

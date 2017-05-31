@@ -22,16 +22,15 @@ app.use(express.static('public'));
 
 // failed to catch req above means 404, forward to error handler
 app.use((req, res, next) =>{
-	const err = new Error('Not Found');
+	var err = new Error('Not Found');
 	err.status = 404;
 	next(err);
 });
 
 // handle any errors
 app.use((err, req, res, next) => {
-  console.error(err, err.stack);
   res.status(err.status || 500);
-  res.render('error', {
+  return res.render('error', {
     error: err
   });
 });
