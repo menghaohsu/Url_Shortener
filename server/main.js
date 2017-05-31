@@ -40,12 +40,12 @@ app.use((err, req, res, next) => {
 const port = 3000;
 app.listen(port, () => {
   console.log('The server is listening closely on port', port);
-  db.sync({ force:true })
+  db.sync()
   .then(() => {
     console.log('Sync the database');
   })
   .catch((err) => {
-    console.error('Trouble right here in River City', err, err.stack);
+    console.error('Trouble right here', err, err.stack);
   });
 });
 
