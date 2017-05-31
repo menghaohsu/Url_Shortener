@@ -35,7 +35,7 @@ app.use((err, req, res, next) => {
 });
 
 // listen on a port
-var port = 3000;
+const port = 3000;
 app.listen(port, () => {
   console.log('The server is listening closely on port', port);
   db.sync()

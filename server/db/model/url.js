@@ -22,15 +22,6 @@ module.exports = db.define('url',{
       return shortenUrl;
     }
   },
-  instanceMethods: {
-    decode: (str) => {
-      let num = 0;
-      for(let i=0; i<str.length; i+=1){
-        num = num*length +char.indexOf(str.charAt(i));
-      }
-      return num;
-    }
-  },
   hooks: {
     afterCreate: (url) => {
       let sUrl = url.Model.encode(url.id);

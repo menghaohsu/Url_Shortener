@@ -28,8 +28,6 @@ module.exports = () => {
     .catch(next);
   });
 
-
-
   router.post('/', (req, res, next) => {
     return Url.create(req.body)
     .then((url) => {
