@@ -28,7 +28,11 @@
   },
   "homepage": "https://github.com/menghaohsu/Url_Shortener#readme",
   "dependencies": {
+    "babel-register": "^6.24.1",
+    "body-parser": "^1.17.2",
     "clipboard": "^1.6.1",
+    "express": "^4.15.3",
+    "sequelize": "^3.30.4",
     "swig": "^1.4.2"
   },
   "devDependencies": {
