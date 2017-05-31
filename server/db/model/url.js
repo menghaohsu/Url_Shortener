@@ -12,6 +12,7 @@ module.exports = db.define('url',{
     type: Sequelize.STRING
   }
 },{
+  // hashing with id
   classMethods: {
     encode: (num) => {
       let shortenUrl = '';
@@ -22,6 +23,7 @@ module.exports = db.define('url',{
       return shortenUrl;
     }
   },
+  // afterCreate data in database, insert the shorten url by calling encode()
   hooks: {
     afterCreate: (url) => {
       let sUrl = url.Model.encode(url.id);

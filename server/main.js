@@ -7,10 +7,12 @@ const db = require('./db');
 const app = express();
 console.log("server listening")
 
+// swig to render html file
 app.engine('html', swig.renderFile);
 app.set('view engine','html')
 app.set('views', __dirname+'/views/');
 
+// body-parser to get req.body
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
