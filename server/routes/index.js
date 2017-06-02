@@ -51,7 +51,7 @@ module.exports = () => {
             res.json(newUrl)
           })
         }else {
-          res.status(500).send('Url Already Being Used');
+          res.status(400).send('Url Already Being Used');
         }
       })
     }else{
